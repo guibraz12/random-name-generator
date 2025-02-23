@@ -57,12 +57,11 @@ main{
 }
 
 
-/* sinta-se free para mudar */
-#random-name {
+#randomName {
     font-size: 24px;
     font-weight: bold;
     color: #333;
-    line-height: 0px;
+    line-height: 1.5;
 }
 
 /* sinta-se free para mudar */

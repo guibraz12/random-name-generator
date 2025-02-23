@@ -20,6 +20,8 @@ func main() {
 }
 
 func randomNameHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*") // Adiciona o cabeçalho CORS
+
 	firstNames := []string{"Alice", "Bob", "Charlie", "Diana"}
 	lastNames := []string{"Smith", "Johnson", "Williams", "Brown"}
 

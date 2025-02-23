@@ -3,39 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
-    
+    <title>Gerador de Nome Aleatório</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <header>
-        <div class="Space"></div>
-        <div class="Icon"></div>
-        <div class="Space"></div>
-        <div class="Icon"></div>
-    </header>
+    <h1>Gerador de Nome Aleatório</h1>
+    <button onclick="getRandomName()">Gerar Nome</button>
+    <p id="nameDisplay"></p>
 
-    <content>
+    <script>
+        function getRandomName() {
+            fetch('/random-name')
+                .then(response => response.text())  // Lê a resposta como texto puro
+                .then(name => {
+                    document.getElementById('nameDisplay').textContent = name; // Exibe o nome
+                })
+                .catch(error => console.error('Erro ao buscar nome:', error));
+        }
+    </script>
 
-    <div class="ADDS-L">
-        <h2>anuncios</h2>
-    </div>
-    <div class="ADDS-R">
-        <h2>anuncios</h2>
-    </div>
-    
-    <main>
-    <h1>Random Name Generator</h1>
-    <div id="random-name"></div>
-    <button id="generate-name-button">Generate Random Name</button>
-    </main>
-
-    <content>
-
-        <script src="js/script.js" defer></script>
-
-
-    </body>
+</body>
 </html>
